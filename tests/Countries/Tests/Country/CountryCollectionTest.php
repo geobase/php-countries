@@ -2,10 +2,10 @@
 
 namespace GeoBase\Countries\Tests\Country;
 
-use PHPUnit_Framework_TestCase;
 use GeoBase\Countries\CountryRepository;
+use PHPUnit\Framework\TestCase;
 
-class CountryCollectionTest extends PHPUnit_Framework_TestCase
+class CountryCollectionTest extends TestCase
 {
     public function getCollection()
     {

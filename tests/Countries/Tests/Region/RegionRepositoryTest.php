@@ -2,11 +2,11 @@
 
 namespace GeoBase\Countries\Tests\Region;
 
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase;
 use GeoBase\Regions\Region\RegionEntity;
 use GeoBase\Regions\RegionRepository;
 
-class RegionRepositoryTest extends PHPUnit_Framework_TestCase
+class RegionRepositoryTest extends TestCase
 {
     public function testFindAll()
     {

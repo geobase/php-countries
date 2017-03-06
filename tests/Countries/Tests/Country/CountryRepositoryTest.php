@@ -2,11 +2,11 @@
 
 namespace GeoBase\Countries\Tests\Country;
 
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase;
 use GeoBase\Countries\Country\CountryEntity;
 use GeoBase\Countries\CountryRepository;
 
-class CountryRepositoryTest extends PHPUnit_Framework_TestCase
+class CountryRepositoryTest extends TestCase
 {
     public function testFindAll()
     {

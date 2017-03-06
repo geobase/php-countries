@@ -2,12 +2,12 @@
 
 namespace GeoBase\Countries\Tests\Region;
 
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase;
 use GeoBase\Regions\Region\RegionEntity;
 use GeoBase\Regions\Region\RegionLoader;
 use GeoBase\Regions\Region\RegionMapper;
 
-class RegionMapperTest extends PHPUnit_Framework_TestCase
+class RegionMapperTest extends TestCase
 {
     public function testMapArrayToCollection()
     {
