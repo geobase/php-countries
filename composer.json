@@ -14,10 +14,10 @@
   "require": {
     "php": ">=5.6.0",
     "league/geotools": ">=0.6",
-    "geobase/countries-data": "^1.0",
-    "phpunit/phpunit": "^6.0"
+    "geobase/countries-data": "^1.0"
   },
   "require-dev": {
+  "phpunit/phpunit": "^6.0"
   },
   "autoload": {
     "psr-4": {
