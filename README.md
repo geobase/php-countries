@@ -1,9 +1,13 @@
 <p align="center"><img width="320"src="https://cdn.rawgit.com/geobase/countries/master/logo.png"></p>
 
-[![Build Status](https://img.shields.io/travis/smart-io/geo/master.svg?style=flat)](https://travis-ci.org/smart-io/geo)
-[![Latest Stable Version](http://img.shields.io/packagist/v/smart/geo.svg?style=flat)](https://packagist.org/packages/smart/geo)
-[![Total Downloads](https://img.shields.io/packagist/dt/smart/geo.svg?style=flat)](https://packagist.org/packages/smart/geo)
-[![License](https://img.shields.io/packagist/l/smart/geo.svg?style=flat)](https://packagist.org/packages/smart/geo)
+<p align="center">
+  <a href="https://travis-ci.org/geobase/php-countries"><img src="https://img.shields.io/travis/geobase/php-countries.svg?style=flat-square" alt="Build Status"></a>
+  <a href="https://styleci.io/repos/26692561"><img src="https://styleci.io/repos/26692561/shield" alt="StyleCI"></a>
+  <a href="https://scrutinizer-ci.com/g/geobase/php-countries/?branch=master"><img src="https://img.shields.io/scrutinizer/g/geobase/php-countries.svg?style=flat-square" alt="Scrutinizer Code Quality"></a>
+  <a href="https://scrutinizer-ci.com/g/geobase/php-countries/?branch=master"><img src="https://img.shields.io/scrutinizer/coverage/g/geobase/php-countries.svg?style=flat-square" alt="Code Coverage"></a>
+  <a href="https://codeclimate.com/github/geobase/php-countries"><img src="https://img.shields.io/codeclimate/github/geobase/php-countries.svg?style=flat-square" alt="Code Climate"></a>
+  <a href="https://packagist.org/packages/geobase/countries"><img src="https://img.shields.io/packagist/v/geobase/countries.svg?style=flat-square" alt="Latest Stable Version"></a>
+</p>
 
 Data from Open Data providers compiled into easy to use PHP objects Edit
 
