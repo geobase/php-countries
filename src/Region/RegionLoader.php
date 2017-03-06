@@ -26,20 +26,21 @@ class RegionLoader
     public function loadAllRegions()
     {
         return json_decode(
-            file_get_contents($this->path . DIRECTORY_SEPARATOR . self::ALL_REGIONS_FILE),
+            file_get_contents($this->path.DIRECTORY_SEPARATOR.self::ALL_REGIONS_FILE),
             true
         );
     }
 
     /**
      * @param string $region
+     *
      * @return array
      */
     public function loadRegion($region)
     {
         return json_decode(
             file_get_contents(
-                $this->path . DIRECTORY_SEPARATOR . sprintf(self::REGION_FILE, $region)
+                $this->path.DIRECTORY_SEPARATOR.sprintf(self::REGION_FILE, $region)
             ),
             true
         );
@@ -47,13 +48,14 @@ class RegionLoader
 
     /**
      * @param string $region
+     *
      * @return array
      */
     public function loadRegionPolygon($region)
     {
         return json_decode(
             file_get_contents(
-                $this->path . DIRECTORY_SEPARATOR . sprintf(self::REGION_POLYGON_FILE, $region)
+                $this->path.DIRECTORY_SEPARATOR.sprintf(self::REGION_POLYGON_FILE, $region)
             ),
             true
         );

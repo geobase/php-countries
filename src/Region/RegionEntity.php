@@ -2,16 +2,16 @@
 
 namespace GeoBase\Regions\Region;
 
-use JsonSerializable;
-use League\Geotools\Coordinate\Coordinate;
 use GeoBase\Countries\Coordinate\CoordinateCollectionInterface;
 use GeoBase\Countries\Coordinate\CoordinateLogic;
-use GeoBase\Regions\Region\RegionName\RegionNameCollection;
 use GeoBase\Countries\Country\CountryEntity;
-use GeoBase\Regions\Region\Type\TypeInterface;
-use League\Geotools\Polygon\Polygon;
-use League\Geotools\BoundingBox\BoundingBox;
 use GeoBase\Countries\Geo;
+use GeoBase\Regions\Region\RegionName\RegionNameCollection;
+use GeoBase\Regions\Region\Type\TypeInterface;
+use JsonSerializable;
+use League\Geotools\BoundingBox\BoundingBox;
+use League\Geotools\Coordinate\Coordinate;
+use League\Geotools\Polygon\Polygon;
 
 class RegionEntity extends CoordinateLogic implements JsonSerializable, CoordinateCollectionInterface
 {
@@ -101,7 +101,7 @@ class RegionEntity extends CoordinateLogic implements JsonSerializable, Coordina
         $this->polygon = new Polygon();
         $this->coordinate = new Coordinate([
             $this->latitude,
-            $this->longitude
+            $this->longitude,
         ]);
         $this->setNames(new RegionNameCollection());
     }
@@ -112,18 +112,18 @@ class RegionEntity extends CoordinateLogic implements JsonSerializable, Coordina
     public function jsonSerialize()
     {
         return [
-            'names' => $this->getNames(),
-            'code' => $this->getCode(),
+            'names'     => $this->getNames(),
+            'code'      => $this->getCode(),
             'long_code' => $this->getLongCode(),
-            'type' => $this->getType(),
-            'country' => $this->getCountry(),
-            'timezone' => $this->getTimezone(),
-            'latitude' => $this->getLatitude(),
+            'type'      => $this->getType(),
+            'country'   => $this->getCountry(),
+            'timezone'  => $this->getTimezone(),
+            'latitude'  => $this->getLatitude(),
             'longitude' => $this->getLongitude(),
-            'north' => $this->getNorth(),
-            'east' => $this->getEast(),
-            'south' => $this->getSouth(),
-            'west' => $this->getWest()
+            'north'     => $this->getNorth(),
+            'east'      => $this->getEast(),
+            'south'     => $this->getSouth(),
+            'west'      => $this->getWest(),
         ];
     }
 
@@ -137,11 +137,13 @@ class RegionEntity extends CoordinateLogic implements JsonSerializable, Coordina
 
     /**
      * @param Polygon $polygon
+     *
      * @return $this
      */
     public function setPolygon(Polygon $polygon)
     {
         $this->polygon = $polygon;
+
         return $this;
     }
 
@@ -155,11 +157,13 @@ class RegionEntity extends CoordinateLogic implements JsonSerializable, Coordina
 
     /**
      * @param BoundingBox $boundingBox
+     *
      * @return $this
      */
     public function setBoundingBox(BoundingBox $boundingBox)
     {
         $this->boundingBox = $boundingBox;
+
         return $this;
     }
 
@@ -173,11 +177,13 @@ class RegionEntity extends CoordinateLogic implements JsonSerializable, Coordina
 
     /**
      * @param string $code
+     *
      * @return $this
      */
     public function setCode($code)
     {
         $this->code = $code;
+
         return $this;
     }
 
@@ -191,11 +197,13 @@ class RegionEntity extends CoordinateLogic implements JsonSerializable, Coordina
 
     /**
      * @param string $longCode
+     *
      * @return $this
      */
     public function setLongCode($longCode)
     {
         $this->longCode = $longCode;
+
         return $this;
     }
 
@@ -209,11 +217,13 @@ class RegionEntity extends CoordinateLogic implements JsonSerializable, Coordina
 
     /**
      * @param Coordinate $coordinate
+     *
      * @return $this
      */
     public function setCoordinate(Coordinate $coordinate)
     {
         $this->coordinate = $coordinate;
+
         return $this;
     }
 
@@ -227,12 +237,14 @@ class RegionEntity extends CoordinateLogic implements JsonSerializable, Coordina
 
     /**
      * @param string $latitude
+     *
      * @return $this
      */
     public function setLatitude($latitude)
     {
         $this->latitude = $latitude;
         $this->coordinate->setLatitude($this->latitude);
+
         return $this;
     }
 
@@ -246,12 +258,14 @@ class RegionEntity extends CoordinateLogic implements JsonSerializable, Coordina
 
     /**
      * @param string $longitude
+     *
      * @return $this
      */
     public function setLongitude($longitude)
     {
         $this->longitude = $longitude;
         $this->coordinate->setLongitude($this->longitude);
+
         return $this;
     }
 
@@ -265,11 +279,13 @@ class RegionEntity extends CoordinateLogic implements JsonSerializable, Coordina
 
     /**
      * @param RegionNameCollection $names
+     *
      * @return $this
      */
     public function setNames(RegionNameCollection $names)
     {
         $this->names = $names;
+
         return $this;
     }
 
@@ -283,11 +299,13 @@ class RegionEntity extends CoordinateLogic implements JsonSerializable, Coordina
 
     /**
      * @param string $timezone
+     *
      * @return $this
      */
     public function setTimezone($timezone)
     {
         $this->timezone = $timezone;
+
         return $this;
     }
 
@@ -301,11 +319,13 @@ class RegionEntity extends CoordinateLogic implements JsonSerializable, Coordina
 
     /**
      * @param TypeInterface|string $type
+     *
      * @return $this
      */
     public function setType($type)
     {
         $this->type = $type;
+
         return $this;
     }
 
@@ -319,12 +339,14 @@ class RegionEntity extends CoordinateLogic implements JsonSerializable, Coordina
 
     /**
      * @param string $north
+     *
      * @return $this
      */
     public function setNorth($north)
     {
         $this->getBoundingBox()->setNorth($north);
         $this->north = $north;
+
         return $this;
     }
 
@@ -338,12 +360,14 @@ class RegionEntity extends CoordinateLogic implements JsonSerializable, Coordina
 
     /**
      * @param string $east
+     *
      * @return $this
      */
     public function setEast($east)
     {
         $this->getBoundingBox()->setEast($east);
         $this->east = $east;
+
         return $this;
     }
 
@@ -357,12 +381,14 @@ class RegionEntity extends CoordinateLogic implements JsonSerializable, Coordina
 
     /**
      * @param string $south
+     *
      * @return $this
      */
     public function setSouth($south)
     {
         $this->getBoundingBox()->setSouth($south);
         $this->south = $south;
+
         return $this;
     }
 
@@ -376,12 +402,14 @@ class RegionEntity extends CoordinateLogic implements JsonSerializable, Coordina
 
     /**
      * @param string $west
+     *
      * @return $this
      */
     public function setWest($west)
     {
         $this->getBoundingBox()->setWest($west);
         $this->west = $west;
+
         return $this;
     }
 
@@ -393,11 +421,13 @@ class RegionEntity extends CoordinateLogic implements JsonSerializable, Coordina
         if (null !== $this->unmappedCountry && null === $this->country) {
             $this->country = Geo::getCountryRepository()->findByShortCode($this->unmappedCountry);
         }
+
         return $this->country;
     }
 
     /**
      * @param CountryEntity|string $country
+     *
      * @return $this
      */
     public function setCountry($country)
@@ -407,6 +437,7 @@ class RegionEntity extends CoordinateLogic implements JsonSerializable, Coordina
         } else {
             $this->country = $country;
         }
+
         return $this;
     }
 
@@ -420,11 +451,13 @@ class RegionEntity extends CoordinateLogic implements JsonSerializable, Coordina
 
     /**
      * @param string $unmappedCountry
+     *
      * @return $this
      */
     public function setUnmappedCountry($unmappedCountry)
     {
         $this->unmappedCountry = $unmappedCountry;
+
         return $this;
     }
 

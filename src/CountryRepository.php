@@ -2,8 +2,8 @@
 
 namespace GeoBase\Countries;
 
-use GeoBase\Countries\Country\CountryMapper;
 use GeoBase\Countries\Country\CountryLoader;
+use GeoBase\Countries\Country\CountryMapper;
 
 class CountryRepository
 {
@@ -35,20 +35,26 @@ class CountryRepository
         if (null === self::$collection) {
             self::$collection = self::getMapper()->mapArrayToCollection(self::getLoader()->loadAllCountries());
         }
+
         return self::$collection;
     }
 
     /**
      * @param string $shortCode
+     *
      * @return null|CountryEntity
      */
     public static function findByShortCode($shortCode)
     {
         if (!isset(self::$items[$shortCode])) {
             $country = self::getLoader()->loadCountry($shortCode);
-            if (!$country) return null;
+            if (!$country) {
+                return;
+            }
+
             return self::$items[$shortCode] = self::getMapper()->mapArrayToEntity($country);
         }
+
         return self::$items[$shortCode];
     }
 
@@ -60,6 +66,7 @@ class CountryRepository
         if (null === self::$loader) {
             self::$loader = new CountryLoader();
         }
+
         return self::$loader;
     }
 
@@ -71,6 +78,7 @@ class CountryRepository
         if (null === self::$mapper) {
             self::$mapper = new CountryMapper();
         }
+
         return self::$mapper;
     }
 }

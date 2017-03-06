@@ -2,10 +2,10 @@
 
 namespace GeoBase\Countries\Tests\Region;
 
-use PHPUnit\Framework\TestCase;
 use GeoBase\Regions\Region\RegionEntity;
 use GeoBase\Regions\Region\RegionLoader;
 use GeoBase\Regions\Region\RegionMapper;
+use PHPUnit\Framework\TestCase;
 
 class RegionMapperTest extends TestCase
 {

@@ -13,6 +13,7 @@ class CountryCollection extends ArrayCollection implements CoordinateCollectionI
 {
     /**
      * @param string|LanguageEntity $language
+     *
      * @return $this
      */
     public function orderByName($language)
@@ -21,6 +22,7 @@ class CountryCollection extends ArrayCollection implements CoordinateCollectionI
             $language = $language->getCode();
         }
         $this->order("names.{$language}.name");
+
         return $this;
     }
 }

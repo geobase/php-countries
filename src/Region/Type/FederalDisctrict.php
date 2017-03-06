@@ -2,7 +2,6 @@
 
 namespace GeoBase\Regions\Region\Type;
 
-final class FederalDistrict implements TypeInterface
+final class FederalDisctrict implements TypeInterface
 {
-
 }

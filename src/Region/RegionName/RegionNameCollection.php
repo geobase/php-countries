@@ -14,6 +14,7 @@ class RegionNameCollection extends ArrayCollection
 
     /**
      * @param string|LanguageEntity $key
+     *
      * @return null|RegionNameEntity
      */
     public function get($key)
@@ -40,6 +41,5 @@ class RegionNameCollection extends ArrayCollection
                 }
             }
         }
-        return null;
     }
 }

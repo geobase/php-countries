@@ -9,7 +9,7 @@ class CountryCollectionTest extends TestCase
 {
     public function getCollection()
     {
-        return (new CountryRepository)->findAll();
+        return (new CountryRepository())->findAll();
     }
 
     public function testOrderByCountryName()

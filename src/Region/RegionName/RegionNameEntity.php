@@ -2,8 +2,8 @@
 
 namespace GeoBase\Regions\Region\RegionName;
 
-use JsonSerializable;
 use GeoBase\Countries\Language\LanguageEntity;
+use JsonSerializable;
 
 class RegionNameEntity implements JsonSerializable
 {
@@ -23,8 +23,8 @@ class RegionNameEntity implements JsonSerializable
     public function jsonSerialize()
     {
         return [
-            'name' => $this->getName(),
-            'language' => $this->getLanguage()
+            'name'     => $this->getName(),
+            'language' => $this->getLanguage(),
         ];
     }
 
@@ -38,11 +38,13 @@ class RegionNameEntity implements JsonSerializable
 
     /**
      * @param LanguageEntity|string $language
+     *
      * @return $this
      */
     public function setLanguage($language)
     {
         $this->language = $language;
+
         return $this;
     }
 
@@ -56,11 +58,13 @@ class RegionNameEntity implements JsonSerializable
 
     /**
      * @param string $name
+     *
      * @return $this
      */
     public function setName($name)
     {
         $this->name = $name;
+
         return $this;
     }
 

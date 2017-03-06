@@ -13,6 +13,7 @@ class LanguageCollection extends ArrayCollection
 
     /**
      * @param string $language
+     *
      * @return null|LanguageEntity
      */
     public function get($language)
@@ -22,6 +23,5 @@ class LanguageCollection extends ArrayCollection
                 return $element;
             }
         }
-        return null;
     }
 }

@@ -2,10 +2,10 @@
 
 namespace GeoBase\Countries\Tests\Country;
 
-use PHPUnit\Framework\TestCase;
 use GeoBase\Countries\Country\CountryEntity;
 use GeoBase\Countries\Country\CountryLoader;
 use GeoBase\Countries\Country\CountryMapper;
+use PHPUnit\Framework\TestCase;
 
 class CountryMapperTest extends TestCase
 {

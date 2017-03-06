@@ -8,6 +8,7 @@ class RegionMapper
 {
     /**
      * @param array $data
+     *
      * @return RegionCollection
      */
     public function mapArrayToCollection(array $data)
@@ -19,11 +20,13 @@ class RegionMapper
                 $collection->add($region);
             }
         }
+
         return $collection;
     }
 
     /**
      * @param array $attributes
+     *
      * @return RegionEntity
      */
     public function mapArrayToEntity(array $attributes)

@@ -41,20 +41,22 @@ class ArrayCollection implements Countable, IteratorAggregate, ArrayAccess, Json
 
     /**
      * @param $key
+     *
      * @return $this
      */
     public function order($key)
     {
         if (strpos($key, '.') !== false) {
             $this->orderByChildCollection(explode('.', $key));
+
             return $this;
         }
         trigger_error('feature not implemented'); // todo implement feature
-        return null;
     }
 
     /**
      * @param $keys
+     *
      * @return $this
      */
     private function orderByChildCollection($keys)
@@ -68,12 +70,14 @@ class ArrayCollection implements Countable, IteratorAggregate, ArrayAccess, Json
         ksort($ordered);
         $ordered = array_values($ordered);
         $this->elements = $ordered;
+
         return $this;
     }
 
     /**
      * @param $item
      * @param $keys
+     *
      * @return mixed|null
      */
     private function getChildValueRecursive($item, $keys)
@@ -89,7 +93,7 @@ class ArrayCollection implements Countable, IteratorAggregate, ArrayAccess, Json
         }
 
         if (!isset($value) && isset($method)) {
-            $value = call_user_func([$item, 'get' . current($keys)]);
+            $value = call_user_func([$item, 'get'.current($keys)]);
         } elseif (!isset($value) && property_exists($item, $currentKey)) {
             $value = $item->{$currentKey};
         }
@@ -101,11 +105,11 @@ class ArrayCollection implements Countable, IteratorAggregate, ArrayAccess, Json
                 return $value;
             }
         }
-        return null;
     }
 
     /**
      * @param string $offset
+     *
      * @return bool
      */
     public function offsetExists($offset)
@@ -115,6 +119,7 @@ class ArrayCollection implements Countable, IteratorAggregate, ArrayAccess, Json
 
     /**
      * @param string $offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -124,7 +129,7 @@ class ArrayCollection implements Countable, IteratorAggregate, ArrayAccess, Json
 
     /**
      * @param string $offset
-     * @param mixed $value
+     * @param mixed  $value
      */
     public function offsetSet($offset, $value)
     {
@@ -133,6 +138,7 @@ class ArrayCollection implements Countable, IteratorAggregate, ArrayAccess, Json
 
     /**
      * @param string $offset
+     *
      * @return null
      */
     public function offsetUnset($offset)
@@ -158,6 +164,7 @@ class ArrayCollection implements Countable, IteratorAggregate, ArrayAccess, Json
 
     /**
      * @param string $key
+     *
      * @return null|mixed
      */
     public function get($key)
@@ -165,12 +172,11 @@ class ArrayCollection implements Countable, IteratorAggregate, ArrayAccess, Json
         if (isset($this->elements[$key])) {
             return $this->elements[$key];
         }
-        return null;
     }
 
     /**
      * @param string $key
-     * @param mixed $value
+     * @param mixed  $value
      */
     public function set($key, $value)
     {
@@ -179,16 +185,19 @@ class ArrayCollection implements Countable, IteratorAggregate, ArrayAccess, Json
 
     /**
      * @param mixed $value
+     *
      * @return bool
      */
     public function add($value)
     {
         $this->elements[] = $value;
+
         return true;
     }
 
     /**
      * @param string $key
+     *
      * @return null|mixed
      */
     public function remove($key)
@@ -199,6 +208,5 @@ class ArrayCollection implements Countable, IteratorAggregate, ArrayAccess, Json
 
             return $removed;
         }
-        return null;
     }
 }
