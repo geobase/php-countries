@@ -1,15 +1,28 @@
-<phpunit backupGlobals="false"
-         backupStaticAttributes="false"
-         bootstrap="tests/bootstrap.php"
-         colors="true"
-         convertErrorsToExceptions="true"
-         convertNoticesToExceptions="true"
-         convertWarningsToExceptions="true"
-         stopOnFailure="false"
-         syntaxCheck="false">
+<phpunit
+        backupGlobals="false"
+        backupStaticAttributes="false"
+        bootstrap="tests/bootstrap.php"
+        colors="true"
+        convertErrorsToExceptions="true"
+        convertNoticesToExceptions="true"
+        convertWarningsToExceptions="true"
+        stopOnFailure="false"
+        syntaxCheck="false"
+>
     <testsuites>
         <testsuite name="GeoBase Countries Test Suite">
             <directory>./tests/Countries/</directory>
         </testsuite>
     </testsuites>
+
+    <logging>
+        <log type="coverage-clover"
+             target="./phpunit-coverage.xml"/>
+    </logging>
+
+    <filter>
+        <whitelist>
+            <directory suffix=".php">./src/</directory>
+        </whitelist>
+    </filter>
 </phpunit>
