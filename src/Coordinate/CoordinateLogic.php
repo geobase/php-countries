@@ -2,13 +2,14 @@
 
 namespace GeoBase\Countries\Coordinate;
 
-use League\Geotools\Geotools;
 use League\Geotools\Coordinate\CoordinateInterface;
+use League\Geotools\Geotools;
 
 abstract class CoordinateLogic implements CoordinateInterface
 {
     /**
      * @param CoordinateCollectionInterface $collection
+     *
      * @return CoordinateInterface
      */
     public function findClosest(CoordinateCollectionInterface $collection)

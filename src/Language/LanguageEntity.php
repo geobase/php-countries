@@ -17,7 +17,7 @@ class LanguageEntity implements JsonSerializable
     public function jsonSerialize()
     {
         return [
-            'code' => $this->getCode()
+            'code' => $this->getCode(),
         ];
     }
 
@@ -31,11 +31,13 @@ class LanguageEntity implements JsonSerializable
 
     /**
      * @param string $code
+     *
      * @return $this
      */
     public function setCode($code)
     {
         $this->code = $code;
+
         return $this;
     }
 }

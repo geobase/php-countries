@@ -10,7 +10,7 @@ class LanguageMapper
     private $languages = [
         'en',
         'fr',
-        'de'
+        'de',
     ];
 
     /**
@@ -22,17 +22,20 @@ class LanguageMapper
         foreach ($this->languages as $code) {
             $collection->add($this->mapEntity($code));
         }
+
         return $collection;
     }
 
     /**
      * @param string $code
+     *
      * @return LanguageEntity
      */
     public function mapEntity($code)
     {
         $language = new LanguageEntity();
         $language->setCode($code);
+
         return $language;
     }
 }

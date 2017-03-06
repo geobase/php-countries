@@ -2,9 +2,9 @@
 
 namespace GeoBase\Countries\Tests\Country;
 
-use PHPUnit\Framework\TestCase;
 use GeoBase\Countries\Country\CountryEntity;
 use GeoBase\Countries\CountryRepository;
+use PHPUnit\Framework\TestCase;
 
 class CountryRepositoryTest extends TestCase
 {

@@ -3,14 +3,12 @@
 namespace GeoBase\Countries\Country;
 
 use GeoBase\Countries\Country\CountryName\CountryNameEntity;
-use GeoBase\Countries\Language\LanguageMapper;
-use GeoBase\Countries\Storage;
-use GeoBase\Countries\Language\LanguageCollection;
 
 class CountryMapper
 {
     /**
      * @param array $data
+     *
      * @return CountryCollection
      */
     public function mapArrayToCollection(array $data)
@@ -22,11 +20,13 @@ class CountryMapper
                 $collection->add($country);
             }
         }
+
         return $collection;
     }
 
     /**
      * @param array $attributes
+     *
      * @return CountryEntity
      */
     public function mapArrayToEntity(array $attributes)

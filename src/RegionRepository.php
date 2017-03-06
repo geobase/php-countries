@@ -2,10 +2,10 @@
 
 namespace GeoBase\Regions;
 
-use GeoBase\Regions\Region\RegionMapper;
-use GeoBase\Regions\Region\RegionLoader;
-use GeoBase\Regions\Region\RegionEntity;
 use GeoBase\Regions\Region\RegionCollection;
+use GeoBase\Regions\Region\RegionEntity;
+use GeoBase\Regions\Region\RegionLoader;
+use GeoBase\Regions\Region\RegionMapper;
 
 class RegionRepository
 {
@@ -37,11 +37,13 @@ class RegionRepository
         if (null === self::$collection) {
             self::$collection = self::getMapper()->mapArrayToCollection(self::getLoader()->loadAllRegions());
         }
+
         return self::$collection;
     }
 
     /**
      * @param string $code
+     *
      * @return null|RegionEntity
      */
     public static function findByCode($code)
@@ -50,6 +52,7 @@ class RegionRepository
             return self::$items[$code] =
                 self::getMapper()->mapArrayToEntity(self::getLoader()->loadRegion($code));
         }
+
         return self::$items[$code];
     }
 
@@ -61,6 +64,7 @@ class RegionRepository
         if (null === self::$loader) {
             self::$loader = new RegionLoader();
         }
+
         return self::$loader;
     }
 
@@ -72,6 +76,7 @@ class RegionRepository
         if (null === self::$mapper) {
             self::$mapper = new RegionMapper();
         }
+
         return self::$mapper;
     }
 }

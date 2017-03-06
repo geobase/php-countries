@@ -26,20 +26,25 @@ class CountryLoader
     public function loadAllCountries()
     {
         return json_decode(
-            file_get_contents($this->path . DIRECTORY_SEPARATOR . self::ALL_COUNTRIES_FILE),
+            file_get_contents($this->path.DIRECTORY_SEPARATOR.self::ALL_COUNTRIES_FILE),
             true
         );
     }
 
     /**
      * @param string $country
+     *
      * @return array
      */
     public function loadCountry($country)
     {
-        if (!$country) return null;
-         $file = $this->path . DIRECTORY_SEPARATOR . sprintf(self::COUNTRY_FILE, $country);
-        if (!file_exists($file)) return null;
+        if (!$country) {
+            return;
+        }
+        $file = $this->path.DIRECTORY_SEPARATOR.sprintf(self::COUNTRY_FILE, $country);
+        if (!file_exists($file)) {
+            return;
+        }
 
         return json_decode(
             file_get_contents($file),
@@ -49,13 +54,18 @@ class CountryLoader
 
     /**
      * @param string $country
+     *
      * @return array
      */
     public function loadCountryPolygon($country)
     {
-        if (!$country) return null;
-        $file = $this->path . DIRECTORY_SEPARATOR . sprintf(self::COUNTRY_POLYGON_FILE, $country);
-        if (!file_exists($file)) return null;
+        if (!$country) {
+            return;
+        }
+        $file = $this->path.DIRECTORY_SEPARATOR.sprintf(self::COUNTRY_POLYGON_FILE, $country);
+        if (!file_exists($file)) {
+            return;
+        }
 
         return json_decode(
             file_get_contents($file),
